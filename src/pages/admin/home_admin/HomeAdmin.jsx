@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuAdmin from '../../../components/admin/MenuAdmin';
 import HeaderAdmin from '../../../components/admin/HeaderAdmin';
-import AdminRouter from '../../../routers/adminRouter';
+import AdminRouter from '../../../routers/AdminRouter';
 
 function HomeAdmin(props) {
     return (
