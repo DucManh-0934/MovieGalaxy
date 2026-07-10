@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { ContextLogin } from "../../../contexts/LoginProvide";
-import "./RegisFeaPack.css";
 import { ContextPlan, PlanProvider } from "../../../contexts/PlanProvide";
 import { ContextFeatures } from "../../../contexts/FeaturesProvide";
 import { Link, useNavigate } from "react-router-dom";
