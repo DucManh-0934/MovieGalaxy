@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import TableWatch from "../pages/clients/watch/TableWatch";
 import Main from "../pages/clients/main/Main";
-import InforPage from "../pages/clients/inforpage/Inforpage";
+import InforPage from "../pages/clients/inforpage/InforPage";
 import Account from "../pages/clients/infor/Account";
 import Continued from "../pages/clients/infor/Continued";
 import ListMovie from "../pages/clients/infor/ListMovie";
