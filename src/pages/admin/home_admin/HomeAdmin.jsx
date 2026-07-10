@@ -7,7 +7,7 @@ function HomeAdmin(props) {
     return (
         <div className='md:flex font-serif'>
             <MenuAdmin/>
-            <div className="flex-1 h-screen  ">
+            <div className="flex-1 h-screen ">
                 <HeaderAdmin/>
                 <div className='px-5'>
                 <AdminRouter/>

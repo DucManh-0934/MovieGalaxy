@@ -9,6 +9,7 @@ import { useContext, useMemo, useState } from "react";
 import { ContextActor } from "../../../../contexts/ActorProvide";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { convertDescription } from "../../../../services/reponsitory";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -79,7 +80,7 @@ export default function TableActor({ search ,handleEdit, handleClickDeleteOpen})
                 {page * rowsPerPage + index + 1}
               </TableCell>
               <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.description}</TableCell>
+              <TableCell align="right">{convertDescription(row.description)}</TableCell>
               <TableCell align="right">
                 <div className="flex justify-end">
                   <img src={row.imgUrl} alt={row.name} className="rounded-full w-10 h-10 object-cover" />

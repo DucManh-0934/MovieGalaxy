@@ -1,12 +1,26 @@
 import { useEffect, useState } from "react";
 import "./NoelBackground.css";
-
+import footer1 from "../../assets/footer1.png";
+import footer2 from "../../assets/footer2.png";
+import gift32 from "../../assets/gift32.png";
+import gift41 from "../../assets/gift41.png";
+import gift51 from "../../assets/gift51.png";
+import giving1 from "../../assets/giving1.png";
+import giving2 from "../../assets/giving2.png";
+import giving3 from "../../assets/giving3.png";
+import santaclaushat1 from "../../assets/santaclaushat1.png";
+import snowman1 from "../../assets/snowman1.png";
 const NOEL_IMAGES = [
-  "https://cdn-icons-png.flaticon.com/512/3468/3468377.png",
-  "https://cdn-icons-png.flaticon.com/512/3468/3468379.png",
-  "https://cdn-icons-png.flaticon.com/512/3468/3468382.png",
-  "https://cdn-icons-png.flaticon.com/512/3468/3468386.png",
-  "https://cdn-icons-png.flaticon.com/512/3468389.png"
+  footer1,
+  footer2,
+  gift32,
+  gift41,
+  gift51,
+  giving1,
+  giving2,
+  giving3,
+  santaclaushat1,
+  snowman1
 ];
 
 export default function NoelBackground() {

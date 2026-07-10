@@ -38,13 +38,13 @@ function MenuAdmin(props) {
           )}
         </div>
       </div>
-      <div className={menuShow ? "" :"max-md:hidden"} >
+      <div className={menuShow ? "" : "max-md:hidden"}>
         <div className="bg-white cursor-pointer hover:bg-gray-500 hover:text-yellow-500 mt-3 rounded-lg">
           <button className="py-2 px-1 flex items-center gap-3 ">
             <MdDashboard /> {menuShow && <p>Dash board</p>}
           </button>
         </div>
-        <div className="mt-3" >
+        <div className="mt-3">
           {menuShow && <div className="text-white">Form and Data</div>}
           {LISTMENU.map((e, i) => (
             <div className="relative">
@@ -57,7 +57,7 @@ function MenuAdmin(props) {
               </div>
               {show == i && (
                 <div
-                  className={`flex flex-col ${!menuShow ? "absolute -right-1 top-0  translate-x-full" : ""}`}
+                  className={`flex flex-col ${!menuShow ? "absolute -right-1 top-0 z-1  translate-x-full" : ""}`}
                 >
                   {e.subMenu.map((p, index) => (
                     <Link
@@ -73,11 +73,14 @@ function MenuAdmin(props) {
           ))}
 
           {menuShow && <div className="text-white mt-3">Pages</div>}
-          <div className="bg-white cursor-pointer hover:bg-gray-500 hover:text-white mt-3 rounded-lg">
-            <button className="py-2 px-3 flex items-center gap-3 ">
-              <FaUserAlt /> {menuShow && <p>User Pages</p>}
-            </button>
-          </div>
+          <Link to="/admin/UserPage">
+            <div className="bg-white cursor-pointer hover:bg-gray-500 hover:text-white mt-3 rounded-lg">
+              <button className="py-2 px-3 flex items-center gap-3">
+                <FaUserAlt />
+                {menuShow && <p>User Pages</p>}
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

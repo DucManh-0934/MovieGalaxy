@@ -21,22 +21,13 @@ import { objectById } from "../../../../services/reponsitory";
 import styled from "@emotion/styled";
 import { ContextActor } from "../../../../contexts/ActorProvide";
 import { ContextPlan } from "../../../../contexts/PlanProvide";
+import { countries } from "../../../../untils/Contants";
+import ButtonFile from "../../../../components/ui/ButtonFile";
 const years = [
   2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013,
   2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000,
 ];
-const countries = [
-  "Việt Nam",
-  "Mỹ",
-  "Anh",
-  "Hàn Quốc",
-  "Nhật Bản",
-  "Trung Quốc",
-  "Ấn Độ",
-  "Thái Lan",
-  "Pháp",
-  "Tây Ban Nha",
-];
+
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
   clipPath: "inset(50%)",
@@ -56,6 +47,7 @@ export default function ModalMovie({
   handleClose,
   handleSeclect,
   handleImageChange,
+  handleBannerImageChange,
 }) {
   const [dataChoose, setDataChoose] = useState([]);
   const authors = useContext(ContextAuthor);
@@ -67,6 +59,7 @@ export default function ModalMovie({
   const [openModal, setOpenModal] = useState(false);
   const [keyChoose, setKeyChoose] = useState("");
   const [search, setSearch] = useState("");
+  const selectedPlan = plans.find((p) => p.id === movie.planId);
   const handleClickOpenModal = () => {
     setOpenModal(true);
   };
@@ -117,7 +110,7 @@ export default function ModalMovie({
       >
         <DialogTitle id="alert-dialog-title">{"Modal Add Movie"}</DialogTitle>
         <DialogContent>
-          <div className="grid max-md:grid-cols-1 grid-cols-2 pt-2 gap-3">
+          <div className="grid max-md:grid-cols-1 grid-cols-3 pt-2 gap-3">
             <div className="col-span-1 flex flex-col gap-3">
               <TextField
                 id="outlined-basic"
@@ -150,7 +143,7 @@ export default function ModalMovie({
                 onChange={onchangInput}
                 value={movie.duration}
               />
-              <div className="grid max-md:grid-cols-1 grid-cols-3 pt-2 gap-2">
+              <div className="grid max-md:grid-cols-1 grid-cols-2 pt-2 gap-2">
                 <Autocomplete
                   disablePortal
                   options={years}
@@ -158,19 +151,7 @@ export default function ModalMovie({
                     <TextField {...params} label="Year" />
                   )}
                 />
-                <Autocomplete
-                  disablePortal
-                  options={plans}
-                  getOptionLabel={(option) => option.title}
-                  renderInput={(params) => (
-                    <TextField {...params} label="Find The Plan" />
-                  )}
-                  onChange={(event, value) => {
-                    onchangInput({
-                      target: { name: "planId", value: value.id || "" },
-                    });
-                  }}
-                />
+
                 <Autocomplete
                   disablePortal
                   options={movieTypes}
@@ -211,6 +192,31 @@ export default function ModalMovie({
                     });
                   }}
                 />
+                <Autocomplete
+                  disablePortal
+                  options={[...plans].sort((a, b) => a.level - b.level)}
+                  getOptionLabel={(option) => option.title}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Find The Plan" />
+                  )}
+                  onChange={(event, value) => {
+                    onchangInput({
+                      target: { name: "planId", value: value.id || "" },
+                    });
+                  }}
+                />
+                {selectedPlan?.level >= 2 && (
+                  <TextField
+                    id="outlined-basic"
+                    label="Giá thuê phim (VNĐ)"
+                    variant="outlined"
+                    type="number"
+                    fullWidth
+                    name="priceRent"
+                    onChange={onchangInput}
+                    value={movie.priceRent}
+                  />
+                )}
               </div>
             </div>
             <div className="col-span-1 flex flex-col gap-3">
@@ -289,26 +295,20 @@ export default function ModalMovie({
                     </div>
                   ))}
                 </div>
+                  <ButtonFile
+                styleImg={"mt-2 w-full h-30"}
+                handleBannerImageChange={handleBannerImageChange}
+                object={movie}
+                title={"Banner ảnh"}
+              />
               </div>
-              <Button
-                sx={{ mt: 2 }}
-                component="label"
-                role={undefined}
-                variant="contained"
-                tabIndex={-1}
-                startIcon={<FaFileUpload />}
-              >
-                Upload files
-                <VisuallyHiddenInput
-                  type="file"
-                  multiple
-                  onChange={handleImageChange}
-                />
-              </Button>
-              <img
-                src={movie.imgUrl}
-                alt=""
-                className="rounded-full w-30 h-30 m-auto"
+            </div>
+            <div className="col-span-1">       
+              <ButtonFile
+                styleImg={"mt-5 w-full h-full"}
+                handleBannerImageChange={handleImageChange}
+                object={movie}
+                title={"Ảnh"}
               />
             </div>
           </div>

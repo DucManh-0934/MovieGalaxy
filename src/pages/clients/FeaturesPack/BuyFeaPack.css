@@ -1,0 +1,327 @@
+/* BuyFeaPack.css */
+.bfp-wrap {
+  position: relative;
+  min-height: 100vh;
+  background: #0b0d14;
+  color: #fff;
+  padding: 110px 6vw 60px;   /* ✅ đã tăng để không dính navbar */
+  overflow: hidden;
+}
+
+.bfp-bg-glow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.25), transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bfp-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Header */
+.bfp-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.bfp-back {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.bfp-back:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.bfp-title {
+  flex: 1;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0;
+}
+.bfp-period-select {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+}
+.bfp-period-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border: 1px solid #2a3242;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.bfp-period-discount{
+    color: #22c55e;
+    font-weight: 600;
+    font-size: 12px;
+}
+.bfp-period-badge {
+    background-color: #3b82f6;
+    color:#fff;
+    font-size:11px;
+    paddig:1px 6px;
+    border-radius: 6px;
+}
+.bfp-spacer {
+  width: 40px;
+}
+
+/* Layout */
+.bfp-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .bfp-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bfp-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Payment methods */
+.bfp-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bfp-method-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bfp-method-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.bfp-method-card.selected {
+  border-color: #f472b6;
+  background: rgba(244, 114, 182, 0.1);
+}
+
+.bfp-method-icon {
+  font-size: 22px;
+}
+
+.bfp-method-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.bfp-radio {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.bfp-method-card.selected .bfp-radio {
+  border-color: #f472b6;
+  background: #f472b6;
+}
+
+/* Bank info */
+.bfp-bank-info {
+  margin-top: 18px;
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.bfp-bank-icon {
+  color: #facc15;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bfp-bank-line {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 4px 0;
+}
+
+/* Summary card */
+.bfp-summary-card {
+  position: sticky;
+  top: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 28px;
+  backdrop-filter: blur(10px);
+}
+
+.bfp-summary-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #facc15;
+  background: rgba(250, 204, 21, 0.12);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.bfp-summary-plan {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.bfp-summary-price {
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(90deg, #facc15, #f472b6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 6px;
+}
+
+.bfp-summary-period {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 4px;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
+}
+
+.bfp-summary-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 18px 0;
+}
+
+.bfp-summary-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bfp-summary-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bfp-check {
+  color: #4ade80;
+  font-weight: 800;
+}
+
+.bfp-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+}
+
+.bfp-summary-total {
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 4px;
+}
+
+.bfp-confirm-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 15px;
+  color: #0b0d14;
+  background: linear-gradient(90deg, #facc15, #f472b6);
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s;
+}
+
+.bfp-confirm-btn:hover {
+  transform: translateY(-2px);
+}
+
+.bfp-confirm-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.bfp-terms {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-top: 14px;
+}
+
+.bfp-link {
+  color: #f472b6;
+  cursor: pointer;
+}
+
+.bfp-btn-outline {
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+}

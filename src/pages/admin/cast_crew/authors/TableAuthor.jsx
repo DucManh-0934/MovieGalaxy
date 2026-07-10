@@ -11,7 +11,7 @@ import { useContext, useMemo, useState } from "react";
 import { ContextAuthor } from "../../../../contexts/AuthorProvide";
 import TablePaginationDemo from "../../../../components/admin/TablePagination";
 import { convertDescription } from "../../../../services/reponsitory";
-export default function TableAuthor({search}) {
+export default function TableAuthor({search,handleClickDeleteOpen,handleEdit}) {
   const authors = useContext(ContextAuthor);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -79,12 +79,12 @@ export default function TableAuthor({search}) {
                 <TableCell align="right">{row.name}</TableCell>
                 <TableCell align="right">{convertDescription(row.description)}</TableCell>
                 <TableCell align="right">
-                  <img src={row.imgUrl} alt={row.name} width="50" height="50" />
+                  <img src={row.imgUrl} alt={row.name} className="h-10 w-10 rounded-full" />
                 </TableCell>
                 <TableCell align="right">
                   <div className="flex justify-end text-xl gap-2 items-center">
-                    <FaEdit className="text-blue-600" />
-                    <MdDelete className="text-red-600" />
+                    <FaEdit className="text-blue-600" onClick={() => handleEdit(row)} />
+                    <MdDelete className="text-red-600" onClick={() => handleClickDeleteOpen(row)} />
                   </div>
                 </TableCell>
               </TableRow>

@@ -10,9 +10,9 @@ function ModalTable(props) {
             <img
               src={movie.imgUrl}
               alt={movie.title}
-              className="w-full h-auto object-cover rounded-lg"
+              className="object-cover rounded-lg w-80 h-40 z-20"
             />
-            <div className="p-2 w-full group-hover:opacity-100 bg-gray-500 group-hover:-translate-y-5 transition-all duration-500 opacity-0 text-amber-300">
+            <div className="p-2 w-full group-hover:opacity-100 bg-gray-500 group-hover:-translate-y-5 transition-all duration-500 opacity-0 text-amber-300 mt-3">
                 <p>{movie.name}</p>
             </div>
           </div>

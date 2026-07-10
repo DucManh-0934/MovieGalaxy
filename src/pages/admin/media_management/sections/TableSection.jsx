@@ -85,13 +85,13 @@ export default function TableSection({
                   {page * rowsPerPage + index + 1}
                 </TableCell>
                 <TableCell align="right">{row.name}</TableCell>
-                <TableCell align="right">{row.movieId }</TableCell>
+                <TableCell align="right">{movies.find((movie) => movie.id === row.movieId)?.name || "Movie not found"}</TableCell>
                 <TableCell align="right">
                   <div className="flex justify-end">
                     <img
                       src={row.imgUrl}
                       alt={row.name}
-                      className="w-10 h-10 object-cover rounded-full"
+                      className="w-10 h-15 object-cover rounded-md"
                     />
                   </div>
                 </TableCell>

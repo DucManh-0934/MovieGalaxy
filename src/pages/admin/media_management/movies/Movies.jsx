@@ -19,6 +19,7 @@ const inner = {
   view: 0,
   priceRent: 0,
   imgUrl: "",
+  bannerImgUrl: "",
 };
 
 function Movies(props) {
@@ -30,11 +31,25 @@ function Movies(props) {
       : [...list, item];
   };
   const handleImageChange = (event) => {
+    console.log("img");
+    
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
         setMovie({ ...movie, imgUrl: reader.result });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+    const handleBannerImageChange = (event) => {
+      console.log("banner");
+      
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setMovie({ ...movie, bannerImgUrl: reader.result });
       };
       reader.readAsDataURL(file);
     }
@@ -72,7 +87,7 @@ function Movies(props) {
     setMovie(inner);
   };
 
-  console.log(movie);
+ 
 
   return (
     <div>
@@ -89,6 +104,7 @@ function Movies(props) {
         onchangInput={onchangInput}
         addMovie={addMovie}
         handleImageChange={handleImageChange}
+        handleBannerImageChange={handleBannerImageChange}
       />
       <ModalTable />
     </div>

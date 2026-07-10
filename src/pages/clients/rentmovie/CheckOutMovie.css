@@ -1,0 +1,192 @@
+.co-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 80px 1rem 4rem; /* ← chỉ sửa dòng này, thêm 100px trên */
+  font-family: inherit;
+}
+@media (max-width: 640px) {
+  .co-page { grid-template-columns: 1fr; }
+}
+
+.co-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.co-card-title,
+.pm-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+/* MOVIE THUMB */
+.movie-thumb {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.movie-thumb-placeholder {
+  width: 72px;
+  height: 100px;
+  border-radius: 6px;
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+.movie-thumb-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+.movie-thumb-info strong { font-size: 15px; font-weight: 600; color: #111; }
+.movie-thumb-info span  { font-size: 12px; color: #999; }
+.plan-label { color: #f5c518 !important; font-weight: 600 !important; }
+
+/* INFO ROWS */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid #f0f0f0;
+  font-size: 13px;
+}
+.info-row .lbl { color: #777; }
+.info-row .val { font-weight: 500; color: #111; }
+.info-row .val.accent { color: #f5c518; }
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0 0;
+  border-top: 1px solid #ccc;
+  margin-top: 4px;
+}
+.total-row .lbl { font-size: 14px; font-weight: 600; color: #111; }
+.total-row .val { font-size: 17px; font-weight: 700; color: #f5c518; }
+
+.note {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* COUPON */
+.coupon-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+}
+.coupon-row input {
+  flex: 1;
+  height: 36px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 13px;
+}
+.coupon-row button {
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid #378ADD;
+  border-radius: 8px;
+  background: #e6f1fb;
+  color: #185FA5;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* PAYMENT METHODS */
+.pm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.pm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  color: #111;
+  transition: border-color 0.12s;
+}
+.pm-btn:hover { border-color: #aaa; }
+.pm-btn.active {
+  border: 2px solid #f5c518;
+  background: #fffbea;
+  color: #7a5c00;
+  font-weight: 600;
+}
+
+.pm-paypal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  background: #F5C518;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #003087;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.pm-credit-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  background: #1c1c1e;
+  border: none;
+  font-size: 13px;
+  color: #fff;
+  cursor: pointer;
+}
+.pm-credit-note {
+  text-align: center;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 6px;
+}
+
+.btn-confirm {
+  display: block;
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 13px;
+  background: #F5C518;
+  color: #1a1000;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-confirm:hover { background: #e0b400; }

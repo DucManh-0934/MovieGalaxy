@@ -1,0 +1,170 @@
+/* --- PHẦN CSS CHUNG --- */
+.slide-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-swiper {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Hiệu ứng zoom nhẹ khi hiển thị */
+  animation: kenburns 20s infinite alternate;
+}
+
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%),
+              linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 30%);
+  z-index: 1;
+}
+
+.content-box {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  left: 6%;
+  z-index: 10;
+  color: white;
+  max-width: 600px;
+}
+
+.movie-title {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-style: italic;
+  line-height: 1.1;
+  margin-bottom: 5px;
+  /* Hiệu ứng bóng đổ cho chữ chuyên nghiệp hơn */
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+
+.movie-sub {
+  color: #FFE8A3;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.movie-tag {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 5px 15px;
+  border-radius: 4px;
+  width: fit-content;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.movie-tag:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #FFE8A3;
+}
+
+.movie-desc {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 450px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.play-button {
+  width: 65px;
+  height: 65px;
+  background: #FFE8A3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 232, 163, 0.4);
+}
+
+.icon-play {
+  color: black;
+  font-size: 20px;
+  margin-left: 4px;
+}
+
+/* THUMBNAILS SWIPER */
+.thumb-swiper {
+  position: absolute !important;
+  bottom: 60px !important;
+  right: 5% !important;
+  width: 420px !important;
+  height: 90px !important;
+  z-index: 20;
+}
+
+.thumb-item {
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-swiper .swiper-slide-thumb-active {
+  opacity: 1;
+  border: 2px solid #FFE8A3;
+  transform: translateY(-8px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .content-box {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    max-width: none;
+  }
+  
+  .movie-desc, .movie-categories {
+    display: none !important;
+  }
+
+  .thumb-swiper {
+    width: 90% !important;
+    left: 5% !important;
+    bottom: 30px !important;
+  }
+
+  .overlay-gradient {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%) !important;
+  }
+}

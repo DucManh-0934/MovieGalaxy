@@ -74,10 +74,10 @@ function Character(props) {
     setCharactor(row);
     handleClickOpen();
   };
-  const handleDeleted = async () => {
-    await deleteDocument("Charactors", charactor);
-    handleCloseDelete();
-  }
+    const handleDeleted = async () => {
+      await deleteDocument("Charactors", charactor);
+      handleCloseDelete();
+    }
   return (
     <div>
       <SearchAdmin

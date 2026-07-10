@@ -13,6 +13,7 @@ import Plan from "../pages/admin/vip/plans/Plan";
 import Actor from "../pages/admin/cast_crew/actors/Actor";
 import Charactor from "../pages/admin/cast_crew/charactors/Charactor";
 import Author from "../pages/admin/cast_crew/authors/Author";
+import UserPage from "../pages/admin/user_management/UserPage";
 
 function AdminRouter(props) {
   const routers = [
@@ -63,6 +64,10 @@ function AdminRouter(props) {
     {
       path: "/admin/characters",
       element: <Charactor />,
+    },
+    {
+      path: "/admin/UserPage",
+      element: <UserPage />,
     },
   ];
   return(

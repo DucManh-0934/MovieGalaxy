@@ -1,0 +1,293 @@
+.userpage {
+  --bg: #16151a;
+  --panel: #201f26;
+  --gold: #d4a954;
+  --wine: #b23a48;
+  --ink: #f3f1ec;
+  --muted: #8b8894;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100%;
+  padding: 40px clamp(16px, 4vw, 48px);
+  font-family: "Inter", system-ui, sans-serif;
+}
+.userpage .mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.userpage-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 20px;
+}
+.userpage-head h1 {
+  font-family: "Oswald", "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: clamp(22px, 3vw, 30px);
+  margin: 0;
+}
+.userpage-head .eyebrow {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.userpage-head .count {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.controls input,
+.controls select {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--ink);
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+}
+.controls input:focus,
+.controls select:focus {
+  border-color: var(--gold);
+}
+
+.ticket-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.ticket {
+  display: flex;
+  background: var(--panel);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+.ticket-perf {
+  width: 0;
+  border-left: 2px dashed rgba(255, 255, 255, 0.14);
+  margin: 16px 0;
+}
+.ticket-main {
+  flex: 1;
+  padding: 18px 20px;
+  min-width: 0;
+}
+.ticket-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--gold), #a5793a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #16151a;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(212, 169, 84, 0.25);
+  overflow: hidden;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ticket-title {
+  min-width: 0;
+  flex: 1;
+}
+.ticket-title h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ticket-title p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag {
+  font-size: 10px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tag.admin {
+  background: rgba(178, 58, 72, 0.16);
+  color: #e4707e;
+  border-color: rgba(178, 58, 72, 0.4);
+}
+.tag.user {
+  background: rgba(212, 169, 84, 0.14);
+  color: var(--gold);
+  border-color: rgba(212, 169, 84, 0.35);
+}
+
+.ticket-divider {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 14px 0;
+}
+.ticket-divider .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.ticket-divider .line {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.18) 0 6px,
+    transparent 6px 12px
+  );
+}
+
+.ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 14px;
+  margin: 0;
+}
+.ticket-grid .span-2 {
+  grid-column: 1 / -1;
+}
+.ticket-grid dt {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.ticket-grid dd {
+  margin: 0;
+  font-size: 13px;
+}
+.pass-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pass-row button {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--gold);
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pass-row button:hover {
+  border-color: var(--gold);
+}
+
+.ticket-stub {
+  width: 56px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--wine), #7d2732);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.stub-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: #f3e9d8;
+}
+.stub-id {
+  writing-mode: vertical-rl;
+  font-size: 10px;
+  color: rgba(243, 233, 216, 0.6);
+}
+
+.tag-btn {
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    filter 0.15s ease,
+    transform 0.05s ease;
+}
+.tag-btn:hover:not(:disabled) {
+  filter: brightness(1.25);
+}
+.tag-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.tag-btn:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+.tag.staff {
+  background: #4a4a2a;
+  color: #e8d98a;
+}
+
+.role-select {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: #1c1c1c;
+  color: #eee;
+  font-size: 0.85rem;
+}
+
+.role-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-banner {
+  background: #4a1f1f;
+  color: #f5b8b8;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}

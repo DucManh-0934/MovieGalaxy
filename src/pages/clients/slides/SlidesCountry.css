@@ -1,0 +1,15 @@
+/* SlidesCountry.css */
+.country_slide {
+  .swiper {
+    width: 100%;
+    padding: 6px 2px 10px;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .swiper-slide img {
+    display: block;
+  }
+}
