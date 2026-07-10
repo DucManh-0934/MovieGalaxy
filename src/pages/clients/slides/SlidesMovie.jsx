@@ -11,7 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { demoMovie } from "../../../untils/Contants";
-import View from "../ModalView/view";
+import View from "../ModalView/View";
 import { ContextMovie } from "../../../contexts/MoviePrivide";
 import { objectById } from "../../../services/reponsitory";
 import { ContextCategories } from "../../../contexts/CategoryProvide";
