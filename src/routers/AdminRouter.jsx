@@ -3,7 +3,7 @@ import Dashboard from "../pages/admin/dashboard/Dashboard";
 import Categories from "../pages/admin/metadata/categories/Categories";
 import Countries from "../pages/admin/metadata/countries/Countries";
 import { Route, Router, Routes } from "react-router-dom";
-import Movies from "../pages/admin/media_management/Movies/Movies";
+import Movies from "../pages/admin/media_management/movies/Movies";
 import Episode from "../pages/admin/media_management/episodes/Episode";
 import Movietype from "../pages/admin/metadata/movietypes/Movietype";
 import Section from "../pages/admin/media_management/sections/Section";
